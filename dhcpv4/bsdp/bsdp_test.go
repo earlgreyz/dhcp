@@ -19,7 +19,7 @@ func RequireHasOption(t *testing.T, opts dhcpv4.OptionGetter, opt dhcpv4.Option)
 
 func TestParseBootImageListFromAck(t *testing.T) {
 	expectedBootImages := []BootImage{
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: true,
 				ImageType: BootImageTypeMacOSX,
@@ -27,7 +27,7 @@ func TestParseBootImageListFromAck(t *testing.T) {
 			},
 			Name: "bsdp-1",
 		},
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: false,
 				ImageType: BootImageTypeMacOS9,
@@ -246,7 +246,7 @@ func TestNewReplyForInformList_NoImages(t *testing.T) {
 func TestNewReplyForInformList(t *testing.T) {
 	inform, _ := NewInformList(net.HardwareAddr{1, 2, 3, 4, 5, 6}, net.IP{1, 2, 3, 4}, dhcpv4.ClientPort)
 	images := []BootImage{
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: true,
 				ImageType: BootImageTypeMacOSX,
@@ -254,7 +254,7 @@ func TestNewReplyForInformList(t *testing.T) {
 			},
 			Name: "image-1",
 		},
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: true,
 				ImageType: BootImageTypeMacOSX,
@@ -327,7 +327,7 @@ func TestNewReplyForInformSelect_NoImages(t *testing.T) {
 func TestNewReplyForInformSelect(t *testing.T) {
 	inform, _ := NewInformList(net.HardwareAddr{1, 2, 3, 4, 5, 6}, net.IP{1, 2, 3, 4}, dhcpv4.ClientPort)
 	images := []BootImage{
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: true,
 				ImageType: BootImageTypeMacOSX,
@@ -335,7 +335,7 @@ func TestNewReplyForInformSelect(t *testing.T) {
 			},
 			Name: "image-1",
 		},
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: true,
 				ImageType: BootImageTypeMacOSX,

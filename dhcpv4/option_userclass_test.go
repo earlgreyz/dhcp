@@ -9,7 +9,7 @@ import (
 func TestOptUserClassToBytes(t *testing.T) {
 	opt := OptUserClass{
 		UserClasses: [][]byte{[]byte("linuxboot")},
-		Rfc3004: true,
+		Rfc3004:     true,
 	}
 	data := opt.ToBytes()
 	expected := []byte{

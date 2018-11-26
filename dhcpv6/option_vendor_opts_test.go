@@ -77,15 +77,14 @@ func TestVendParseOption(t *testing.T) {
 		t.Fatalf("Invalid Vendor Parse Option result. Expected %v, got %v", expected, opt)
 	}
 
-
 	shortData := make([]byte, 1) // data length too small
-	opt, err = vendParseOption(shortData)
+	_, err = vendParseOption(shortData)
 	if err == nil {
 		t.Fatalf("Short data (<4 bytes) did not cause an error when it should have")
 	}
 
 	shortData = []byte{0, 0, 0, 0} // missing actual vendor data.
-	opt, err = vendParseOption(shortData)
+	_, err = vendParseOption(shortData)
 	if err == nil {
 		t.Fatalf("Missing VendorData option. An error should have been returned but wasn't")
 	}
@@ -93,7 +92,7 @@ func TestVendParseOption(t *testing.T) {
 	shortData = []byte{0, 0,
 		0, 4, // declared length
 		0} // data starts here, length of 1
-	opt, err = vendParseOption(shortData)
+	_, err = vendParseOption(shortData)
 	if err == nil {
 		t.Fatalf("Declared length does not match actual data length. An error should have been returned but wasn't")
 	}

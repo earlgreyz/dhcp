@@ -249,7 +249,6 @@ func TestNewMessageTypeSolicitWithCID(t *testing.T) {
 	require.Equal(t, len(opts), 2)
 }
 
-
 func TestIsUsingUEFIArchTypeTrue(t *testing.T) {
 	msg := DHCPv6Message{}
 	opt := OptClientArchType{ArchTypes: []iana.ArchType{iana.EFI_BC}}

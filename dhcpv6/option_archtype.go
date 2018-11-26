@@ -33,7 +33,7 @@ func (op *OptClientArchType) ToBytes() []byte {
 }
 
 func (op *OptClientArchType) Length() int {
-	return 2*len(op.ArchTypes)
+	return 2 * len(op.ArchTypes)
 }
 
 func (op *OptClientArchType) String() string {

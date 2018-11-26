@@ -1,30 +1,30 @@
 package dhcpv6
 
 import (
+	"errors"
 	"log"
 	"net"
 	"testing"
 	"time"
-	"errors"
 
 	"github.com/stretchr/testify/require"
 )
 
 // utility function to return the loopback interface name
 func getLoopbackInterface() (string, error) {
-		var ifaces []net.Interface
-		var err error
-		if ifaces, err = net.Interfaces(); err != nil {
-				return "", err
-		}
+	var ifaces []net.Interface
+	var err error
+	if ifaces, err = net.Interfaces(); err != nil {
+		return "", err
+	}
 
-		for _, iface := range ifaces {
-			if iface.Flags & net.FlagLoopback != 0 || iface.Name[:2] == "lo" {
-					return iface.Name, nil
-			}
+	for _, iface := range ifaces {
+		if iface.Flags&net.FlagLoopback != 0 || iface.Name[:2] == "lo" {
+			return iface.Name, nil
 		}
+	}
 
-		return "", errors.New("No loopback interface found")
+	return "", errors.New("No loopback interface found")
 }
 
 // utility function to set up a client and a server instance and run it in
@@ -39,7 +39,7 @@ func setUpClientAndServer(handler Handler) (*Client, *Server) {
 
 	c := NewClient()
 	c.LocalAddr = &net.UDPAddr{
-		IP:   net.ParseIP("::1"),
+		IP: net.ParseIP("::1"),
 	}
 	for {
 		if s.LocalAddr() != nil {

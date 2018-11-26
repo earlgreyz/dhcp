@@ -15,7 +15,7 @@ func TestOptIAForPrefixDelegationParseOptIAForPrefixDelegation(t *testing.T) {
 		0, 26, 0, 25, // 26 = IAPrefix Option, 25 = length
 		0xaa, 0xbb, 0xcc, 0xdd, // IAPrefix preferredLifetime
 		0xee, 0xff, 0x00, 0x11, // IAPrefix validLifetime
-		36, // IAPrefix prefixLength
+		36,                                             // IAPrefix prefixLength
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, // IAPrefix ipv6Prefix
 	}
 	opt, err := ParseOptIAForPrefixDelegation(data)
@@ -45,7 +45,7 @@ func TestOptIAForPrefixDelegationParseOptIAForPrefixDelegationInvalidOptions(t *
 		0, 26, 0, 25, // 26 = IAPrefix Option, 25 = length
 		0xaa, 0xbb, 0xcc, 0xdd, // IAPrefix preferredLifetime
 		0xee, 0xff, 0x00, 0x11, // IAPrefix validLifetime
-		36, // IAPrefix prefixLength
+		36,                                          // IAPrefix prefixLength
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // IAPrefix ipv6Prefix missing last byte
 	}
 	_, err := ParseOptIAForPrefixDelegation(data)
@@ -54,8 +54,8 @@ func TestOptIAForPrefixDelegationParseOptIAForPrefixDelegationInvalidOptions(t *
 
 func TestOptIAForPrefixDelegationGetOneOption(t *testing.T) {
 	buf := []byte{
-		0xaa, 0xbb, 0xcc, 0xdd,                         // preferredLifetime
-		0xee, 0xff, 0x00, 0x11,                         // validLifetime
+		0xaa, 0xbb, 0xcc, 0xdd, // preferredLifetime
+		0xee, 0xff, 0x00, 0x11, // validLifetime
 		36,                                             // prefixLength
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, // ipv6Prefix
 	}
@@ -70,8 +70,8 @@ func TestOptIAForPrefixDelegationGetOneOption(t *testing.T) {
 
 func TestOptIAForPrefixDelegationGetOneOptionMissingOpt(t *testing.T) {
 	buf := []byte{
-		0xaa, 0xbb, 0xcc, 0xdd,                         // preferredLifetime
-		0xee, 0xff, 0x00, 0x11,                         // validLifetime
+		0xaa, 0xbb, 0xcc, 0xdd, // preferredLifetime
+		0xee, 0xff, 0x00, 0x11, // validLifetime
 		36,                                             // prefixLength
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, // ipv6Prefix
 	}
@@ -127,7 +127,7 @@ func TestOptIAForPrefixDelegationToBytes(t *testing.T) {
 		0, 26, 0, 25, // 26 = IAPrefix Option, 25 = length
 		0xaa, 0xbb, 0xcc, 0xdd, // IAPrefix preferredLifetime
 		0xee, 0xff, 0x00, 0x11, // IAPrefix validLifetime
-		36, // IAPrefix prefixLength
+		36,                                             // IAPrefix prefixLength
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, // IAPrefix ipv6Prefix
 	}
 	require.Equal(t, expected, opt.ToBytes())
@@ -141,7 +141,7 @@ func TestOptIAForPrefixDelegationString(t *testing.T) {
 		0, 26, 0, 25, // 26 = IAPrefix Option, 25 = length
 		0xaa, 0xbb, 0xcc, 0xdd, // IAPrefix preferredLifetime
 		0xee, 0xff, 0x00, 0x11, // IAPrefix validLifetime
-		36, // IAPrefix prefixLength
+		36,                                             // IAPrefix prefixLength
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, // IAPrefix ipv6Prefix
 	}
 	opt, err := ParseOptIAForPrefixDelegation(data)

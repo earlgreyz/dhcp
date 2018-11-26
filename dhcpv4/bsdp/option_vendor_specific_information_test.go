@@ -117,7 +117,7 @@ func TestParseOptVendorSpecificInformation(t *testing.T) {
 	}
 	optBootImage := o.GetOneOption(OptionBootImageList).(*OptBootImageList)
 	expectedBootImages := []BootImage{
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: false,
 				ImageType: BootImageTypeMacOSX,
@@ -125,7 +125,7 @@ func TestParseOptVendorSpecificInformation(t *testing.T) {
 			},
 			Name: "bsdp-1",
 		},
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: true,
 				ImageType: BootImageTypeMacOS9,
@@ -153,7 +153,7 @@ func TestOptVendorSpecificInformationString(t *testing.T) {
 			&OptMessageType{MessageTypeList},
 			&OptBootImageList{
 				[]BootImage{
-					BootImage{
+					{
 						ID: BootImageID{
 							IsInstall: false,
 							ImageType: BootImageTypeMacOSX,
@@ -161,7 +161,7 @@ func TestOptVendorSpecificInformationString(t *testing.T) {
 						},
 						Name: "bsdp-1",
 					},
-					BootImage{
+					{
 						ID: BootImageID{
 							IsInstall: true,
 							ImageType: BootImageTypeMacOS9,

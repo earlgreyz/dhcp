@@ -31,7 +31,6 @@ var ArchTypeToStringMap = map[ArchType]string{
 	EFI_X86_64:        "EFI x86-64",
 }
 
-
 // String returns a mnemonic name for a given architecture type
 func (a ArchType) String() string {
 	if at := ArchTypeToStringMap[a]; at != "" {

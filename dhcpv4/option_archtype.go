@@ -35,7 +35,7 @@ func (o *OptClientArchType) ToBytes() []byte {
 // Length returns the length of the data portion (excluding option code an byte
 // length).
 func (o *OptClientArchType) Length() int {
-	return 2*len(o.ArchTypes)
+	return 2 * len(o.ArchTypes)
 }
 
 // String returns a human-readable string.

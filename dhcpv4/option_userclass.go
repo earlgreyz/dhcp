@@ -12,7 +12,7 @@ import (
 // OptUserClass represents an option encapsulating User Classes.
 type OptUserClass struct {
 	UserClasses [][]byte
-	Rfc3004 bool
+	Rfc3004     bool
 }
 
 // Code returns the option code

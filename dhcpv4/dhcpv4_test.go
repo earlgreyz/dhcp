@@ -20,9 +20,9 @@ func TestGetExternalIPv4Addrs(t *testing.T) {
 	}
 
 	expected := []net.IP{
-		net.IP{1, 2, 3, 4},
-		net.IP{4, 3, 2, 1},
-		net.IP{4, 3, 2, 0},
+		{1, 2, 3, 4},
+		{4, 3, 2, 1},
+		{4, 3, 2, 0},
 	}
 	actual, err := GetExternalIPv4Addrs(addrs4and6)
 	require.NoError(t, err)

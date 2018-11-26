@@ -8,7 +8,7 @@ import (
 
 func TestOptBootImageListInterfaceMethods(t *testing.T) {
 	bs := []BootImage{
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: false,
 				ImageType: BootImageTypeMacOSX,
@@ -16,7 +16,7 @@ func TestOptBootImageListInterfaceMethods(t *testing.T) {
 			},
 			Name: "bsdp-1",
 		},
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: true,
 				ImageType: BootImageTypeMacOS9,
@@ -59,7 +59,7 @@ func TestParseOptBootImageList(t *testing.T) {
 	o, err := ParseOptBootImageList(data)
 	require.NoError(t, err)
 	expectedBootImages := []BootImage{
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: false,
 				ImageType: BootImageTypeMacOSX,
@@ -67,7 +67,7 @@ func TestParseOptBootImageList(t *testing.T) {
 			},
 			Name: "bsdp-1",
 		},
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: true,
 				ImageType: BootImageTypeMacOS9,
@@ -131,7 +131,7 @@ func TestParseOptBootImageList(t *testing.T) {
 
 func TestOptBootImageListString(t *testing.T) {
 	bs := []BootImage{
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: false,
 				ImageType: BootImageTypeMacOSX,
@@ -139,7 +139,7 @@ func TestOptBootImageListString(t *testing.T) {
 			},
 			Name: "bsdp-1",
 		},
-		BootImage{
+		{
 			ID: BootImageID{
 				IsInstall: true,
 				ImageType: BootImageTypeMacOS9,

@@ -35,7 +35,7 @@ func ParseOptVIVC(data []byte) (*OptVIVC, error) {
 	if len(data) < 2+length {
 		return nil, ErrShortByteStream
 	}
-	data = data[2:length+2]
+	data = data[2 : length+2]
 
 	ids := []VIVCIdentifier{}
 	for len(data) > 5 {

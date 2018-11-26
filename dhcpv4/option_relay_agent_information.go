@@ -41,7 +41,7 @@ func relayParseOption(data []byte) (Option, error) {
 	if len(data) < 2+length {
 		return nil, ErrShortByteStream
 	}
-	return &OptionGeneric{OptionCode: code, Data: data[2:length+2]}, nil
+	return &OptionGeneric{OptionCode: code, Data: data[2 : length+2]}, nil
 }
 
 // Code returns the option code.

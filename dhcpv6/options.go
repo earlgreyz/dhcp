@@ -122,7 +122,7 @@ func ParseOption(dataStart []byte) (Option, error) {
 }
 
 func OptionsFromBytes(data []byte) ([]Option, error) {
-	 return OptionsFromBytesWithParser(data, ParseOption)
+	return OptionsFromBytesWithParser(data, ParseOption)
 }
 
 // OptionParser is a function signature for option parsing
